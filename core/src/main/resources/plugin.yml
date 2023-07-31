@@ -1,0 +1,13 @@
+name: MyMultiversionPlugin
+version: 1.0
+main: com.jeff_media.mymultiversionplugin.MyMultiversionPlugin
+commands:
+  showtps:
+    description: Shows the current TPS
+    usage: /<command>
+    aliases: [ tps ]
+    permission: mymultiversionplugin.showtps
+permissions:
+  mymultiversionplugin.showtps:
+    description: Allows to use the /showtps command
+    default: true

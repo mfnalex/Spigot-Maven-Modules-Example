@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -10,16 +10,28 @@
     <packaging>pom</packaging>
     <modules>
         <module>core</module>
+        <module>spigot-1.20.1</module>
         <module>spigot-1.20</module>
-        <module>dist</module>
         <module>spigot-1.19.4</module>
         <module>spigot-1.16.5</module>
+        <module>spigot-1.12.2</module>
+        <module>spigot-1.8.8</module>
+        <module>dist</module>
     </modules>
 
+    <!-- Properties defined here are inherited by all modules -->
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <!-- Repositories declared here are inherited by all modules -->
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
 
 </project>

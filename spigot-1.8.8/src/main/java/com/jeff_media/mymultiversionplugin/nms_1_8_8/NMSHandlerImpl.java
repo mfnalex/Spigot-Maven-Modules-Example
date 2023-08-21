@@ -12,6 +12,7 @@ import org.bukkit.craftbukkit.v1_8_R3.block.CraftSkull;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemFactory;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.lang.reflect.Field;
@@ -30,8 +31,9 @@ public class NMSHandlerImpl implements NMSHandler {
     }
 
     @Override
-    public SkullMeta getSkullWithBase64(String base64) {
-        SkullMeta meta = (SkullMeta) Bukkit.getItemFactory().getItemMeta(Material.SKULL_ITEM);
+    public ItemStack getSkullWithBase64(String base64) {
+        ItemStack item = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
+        SkullMeta meta = (SkullMeta) item.getItemMeta();
         GameProfile profile = new GameProfile(UUID.randomUUID(), null);
         profile.getProperties().put("textures", new Property("textures", base64));
         try {
@@ -42,6 +44,7 @@ public class NMSHandlerImpl implements NMSHandler {
         } catch (ReflectiveOperationException ex) {
             ex.printStackTrace();
         }
-        return meta;
+        item.setItemMeta(meta);
+        return item;
     }
 }

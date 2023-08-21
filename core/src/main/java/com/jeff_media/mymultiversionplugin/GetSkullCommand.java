@@ -18,9 +18,7 @@ public class GetSkullCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         String base64ChocoBall = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzFiMDdjMDhiMDc4YTkyNzRhYWNiNGQ4NDY4N2MyYTRmM2IzMDhmNzJiNGNmOTMzMzhiMWE1ZjVhZTMzMGUxIn19fQ==";
-        SkullMeta meta = plugin.getNMSHandler().getSkullWithBase64(base64ChocoBall);
-        ItemStack item = new ItemStack(Material.LEGACY_SKULL_ITEM);
-        item.setItemMeta(meta);
+        ItemStack item = plugin.getNMSHandler().getSkullWithBase64(base64ChocoBall);
         ((Player)commandSender).getInventory().addItem(item);
         return true;
     }

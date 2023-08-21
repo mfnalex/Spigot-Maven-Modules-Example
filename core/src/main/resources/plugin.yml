@@ -7,6 +7,7 @@ commands:
     usage: /<command>
     aliases: [ tps ]
     permission: mymultiversionplugin.showtps
+  getskull:
 permissions:
   mymultiversionplugin.showtps:
     description: Allows to use the /showtps command

@@ -21,6 +21,8 @@ public class MyMultiversionPlugin extends JavaPlugin {
         // Example: Command to show TPS
         getCommand("showtps").setExecutor(new ShowTPSCommand(this));
 
+        getCommand("getskull").setExecutor(new GetSkullCommand(this));
+
         // Example: Task to send TPS to all players as actionbar (only requires NMS on 1.8)
         getServer().getScheduler().runTaskTimer(this, new ActionBarTask(this), 0, 20);
     }
